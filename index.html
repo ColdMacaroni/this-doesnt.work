@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link data-trunk rel="copy-dir" href="assets/"/>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="no-javascript">
+            <!-- This creates a neat little sliding message when the user
+                doesn't have javascript enabled. It needs to stay out of sight
+                until the WASM loads and deletes the element. -->
+            <style>
+                body {
+                    /* background-color: #E3DCD8; */
+                    position: absolute;
+                    display: grid;
+                    align-items: center;
+                    justify-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                div#no-javascript h1 {
+                    margin: 0;
+                }
+
+                .no-js-show-later {
+                    opacity: 1;
+                    animation: show-later 4.4s ease-in-out;
+                }
+
+                div#no-javascript img {
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                div#no-javascript {
+                    display: block;
+                    width: fit-content;
+                    background-color: #B6A299;
+                    box-shadow: 0 0 4px #B6A299;
+                    padding: 2em;
+                    border-radius: 2em;
+                    margin-bottom: 30%;
+
+                    transition: height 2s;
+
+                    /* Fade in after a little bit to allow WASM to load */
+                    animation: slide 2s ease-out;
+                }
+
+                @keyframes slide {
+                    0%,40% { margin-top: -200vh; }
+                    100% { margin-top: 0; }
+                }
+
+                @keyframes show-later {
+                    0%,40% { transform: scale(0) rotateX(360deg) rotateY(90deg) }
+                    94% { transform: scale(1.02);}
+                    100% { transform: scale(1);}
+                }
+            </style>
+            <h1> Huh, it really does not work </h1>
+            <p> I respect browsing without JavaScript enabled, but unfortunately this page is built with leptos which uses WASM :( </p>
+            <p> I'm not exactly sure how to add a proper fallback :') </p>
+            <p> You can check out the source code <a href="https://github.com/ColdMacaroni/this-doesnt.work">here on Github</a>.</p>
+            <p> In the mean time, here's a photo of my cat :) </p>
+            <img class="no-js-show-later" src="/assets/tutti.jpg" alt="A cat with black and white fur lying down on the floor, she has her paws curled. It's cute."/>
+        </div>
+    </body>
+</html>
