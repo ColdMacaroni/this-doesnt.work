@@ -13,6 +13,16 @@ pub fn App() -> impl IntoView {
             <Routes>
                 <Route path="/" view=|| view! { <p>"Welcome to my site :))"</p> }/>
             </Routes>
+            <Footer/>
         </Router>
+    }
+}
+
+#[component]
+fn Footer() -> impl IntoView {
+    view! {
+        <footer>
+            <a href="https://neovim.io"><img src="/assets/nvim-badge.gif" alt="Made with neovim" /></a>
+        </footer>
     }
 }
