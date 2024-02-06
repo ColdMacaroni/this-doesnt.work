@@ -29,7 +29,7 @@
 
                 .no-js-show-later {
                     opacity: 1;
-                    animation: show-later 4.4s ease-in-out;
+                    animation: show-later 3.4s ease-in-out;
                 }
 
                 div#no-javascript img {
@@ -47,13 +47,11 @@
                     margin-bottom: 30%;
 
                     transition: height 2s;
-
-                    /* Fade in after a little bit to allow WASM to load */
-                    animation: slide 2s ease-out;
+                    animation: slide 1.2s ease-out;
                 }
 
                 @keyframes slide {
-                    0%,40% { margin-top: -200vh; }
+                    0%,20% { margin-top: -200vh; }
                     100% { margin-top: 0; }
                 }
 
