@@ -9,3 +9,8 @@ edition = "2021"
 leptos = { version = "0.6.5", features = ["csr", "nightly"] }
 leptos_meta = { version = "0.6.5", features = ["csr", "nightly"] }
 leptos_router = { version = "0.6.5", features = ["csr", "nightly"] }
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
